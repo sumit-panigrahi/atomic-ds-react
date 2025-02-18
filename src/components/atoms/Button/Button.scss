@@ -1,0 +1,130 @@
+.btn {
+    display: block;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    border: 1px solid var(--btn-border-color);
+    padding: var(--btn-padding, 0);
+    font-size: var(--btn-font-size, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 2px;
+    &:hover {
+        filter: brightness(90%);
+    }
+
+    &:focus {
+        outline: 2px solid var(--btn-border-color);
+        outline-offset: 2px;
+    }
+
+    &:active {
+        filter: brightness(80%);
+        transform: scale(0.98);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &--variant-primary {
+        --btn-bg-color: #007bff;
+        --btn-text-color: #fff;
+        --btn-border-color: #007bff;
+    }
+
+    &--variant-secondary {
+        --btn-bg-color: #6c757d;
+        --btn-text-color: #fff;
+        --btn-border-color: #6c757d;
+    }
+
+    &--variant-success {
+        --btn-bg-color: #28a745;
+        --btn-text-color: #fff;
+        --btn-border-color: #28a745;
+    }
+
+    &--variant-danger {
+        --btn-bg-color: #dc3545;
+        --btn-text-color: #fff;
+        --btn-border-color: #dc3545;
+    }
+
+    &--variant-warning {
+        --btn-bg-color: #ffc107;
+        --btn-text-color: #212529;
+        --btn-border-color: #ffc107;
+    }
+
+    &--variant-info {
+        --btn-bg-color: #17a2b8;
+        --btn-text-color: #fff;
+        --btn-border-color: #17a2b8;
+    }
+
+    &--variant-light {
+        --btn-bg-color: #f8f9fa;
+        --btn-text-color: #212529;
+        --btn-border-color: #f8f9fa;
+    }
+
+    &--variant-dark {
+        --btn-bg-color: #343a40;
+        --btn-text-color: #fff;
+        --btn-border-color: #343a40;
+    }
+
+    &--size-xs {
+        --btn-padding: 4px 8px;
+        --btn-font-size: 12px;
+    }
+
+    &--size-sm {
+        --btn-padding: 6px 12px;
+        --btn-font-size: 14px;
+    }
+
+    &--size-md {
+        --btn-padding: 8px 16px;
+        --btn-font-size: 16px;
+    }
+
+    &--size-lg {
+        --btn-padding: 10px 20px;
+        --btn-font-size: 18px;
+    }
+
+    &--size-xl {
+        --btn-padding: 12px 24px;
+        --btn-font-size: 20px;
+    }
+
+    &--corner-squared {
+        border-radius: 0;
+    }
+    &--corner-rounded {
+        border-radius: 8px;
+    }
+    &--corner-pill {
+        border-radius: 20px;
+    }
+
+    // Outline modifier (applies to any variant)
+    &--outlined {
+        background-color: transparent !important;
+        color: var(--btn-border-color) !important;
+        border: 1px solid var(--btn-border-color) !important;
+
+        &:hover {
+            background-color: var(--btn-border-color) !important;
+            color: var(--btn-text-color) !important;
+        }
+
+        &:active {
+            background-color: var(--btn-border-color) !important;
+            filter: brightness(85%);
+        }
+    }
+}

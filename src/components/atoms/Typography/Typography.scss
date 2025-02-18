@@ -1,0 +1,136 @@
+// Typography Variant Variables
+$typography-hero: (
+    font-size: 3rem,
+    font-weight: 700,
+    line-height: 1.2
+);
+
+$typography-page-title: (
+    font-size: 2.5rem,
+    font-weight: 700,
+    line-height: 1.2
+);
+
+$typography-section-header: (
+    font-size: 2rem,
+    font-weight: 600,
+    line-height: 1.3
+);
+
+$typography-article-header: (
+    font-size: 1.75rem,
+    font-weight: 600,
+    line-height: 1.3
+);
+
+$typography-heading1: (
+    font-size: 2rem,
+    font-weight: 700,
+    line-height: 1.2
+);
+
+$typography-heading2: (
+    font-size: 1.75rem,
+    font-weight: 700,
+    line-height: 1.3
+);
+
+$typography-heading3: (
+    font-size: 1.5rem,
+    font-weight: 600,
+    line-height: 1.4
+);
+
+$typography-heading4: (
+    font-size: 1.25rem,
+    font-weight: 600,
+    line-height: 1.4
+);
+
+$typography-heading5: (
+    font-size: 1rem,
+    font-weight: 500,
+    line-height: 1.5
+);
+
+$typography-heading6: (
+    font-size: 0.875rem,
+    font-weight: 500,
+    line-height: 1.5
+);
+
+$typography-sub-title1: (
+    font-size: 1.5rem,
+    font-weight: 500,
+    line-height: 1.3
+);
+
+$typography-sub-title2: (
+    font-size: 1.25rem,
+    font-weight: 500,
+    line-height: 1.4
+);
+
+$typography-body1: (
+    font-size: 1rem,
+    font-weight: 400,
+    line-height: 1.6
+);
+
+$typography-body2: (
+    font-size: 0.875rem,
+    font-weight: 400,
+    line-height: 1.6
+);
+
+$typography-caption: (
+    font-size: 0.75rem,
+    font-weight: 400,
+    line-height: 1.4
+);
+
+$typography-overline: (
+    font-size: 0.75rem,
+    font-weight: 600,
+    text-transform: uppercase,
+    line-height: 1.4
+);
+
+$typography-button: (
+    font-size: 1rem,
+    font-weight: 600,
+    text-transform: uppercase,
+    line-height: 1.2
+);
+
+// Apply Styles Dynamically
+.typography {
+    font-family: var(--bs-body-font-family, sans-serif);
+    color: var(--bs-body-color, #212529);
+}
+
+@each $name, $styles in (
+    hero: $typography-hero,
+    page-title: $typography-page-title,
+    section-header: $typography-section-header,
+    article-header: $typography-article-header,
+    heading1: $typography-heading1,
+    heading2: $typography-heading2,
+    heading3: $typography-heading3,
+    heading4: $typography-heading4,
+    heading5: $typography-heading5,
+    heading6: $typography-heading6,
+    sub-title1: $typography-sub-title1,
+    sub-title2: $typography-sub-title2,
+    body1: $typography-body1,
+    body2: $typography-body2,
+    caption: $typography-caption,
+    overline: $typography-overline,
+    button: $typography-button
+) {
+    .typography--variant-#{$name} {
+        @each $property, $value in $styles {
+            #{$property}: $value;
+        }
+    }
+}

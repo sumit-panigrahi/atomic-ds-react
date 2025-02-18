@@ -1,0 +1,34 @@
+// list list--variant-${variant} list--direction-${direction}
+.list {
+    display: flex;
+    
+    margin: 0;
+    padding: 0;
+    &--variant-ordered {
+        
+    }
+
+    &--variant-unordered {
+
+    }
+    &--variant-default {
+        list-style: none;
+    }
+    &--direction-row {
+        list-style: none;
+        flex-direction: row;
+    }
+
+    &--direction-column {
+        flex-direction: column;
+    }
+
+    &--direction-row-reverse {
+        list-style: none;
+        flex-direction: row-reverse;
+    }
+
+    &--direction-column-reverse {
+        flex-direction: column-reverse;
+    }
+}
