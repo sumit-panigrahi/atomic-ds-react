@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/react-app.git' // Replace with your repo
+                git 'https://github.com/sumit-panigrahi/atomic-ds-react.git' // Replace with your repo
             }
         }
 
