@@ -2,22 +2,14 @@ pipeline {
     agent any
 
     environment {
-        NODEJS_VERSION = "22.12.0" // Update if needed
+        NODEJS_HOME = tool 'NodeJS 22.12.0' // Make sure this matches the name in Global Tool Configuration
+        PATH = "${NODEJS_HOME}/bin:${env.PATH}"
     }
 
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                git 'https://github.com/sumit-panigrahi/atomic-ds-react.git' // Replace with your repo
-            }
-        }
-
-        stage('Setup Node.js') {
-            steps {
-                script {
-                    def nodejs = tool name: "NodeJS ${NODEJS_VERSION}", type: "jenkins.plugins.nodejs.tools.NodeJSInstallation"
-                    env.PATH = "${nodejs}/bin:${env.PATH}"
-                }
+                git branch: 'main', url: 'https://github.com/your-username/your-repo.git'
             }
         }
 
@@ -30,18 +22,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm run build'
-            }
-        }
-
-        stage('Archive Build Artifacts') {
-            steps {
-                archiveArtifacts artifacts: 'build/**', fingerprint: true
-            }
-        }
-
-        stage('Deploy (Optional)') {
-            steps {
-                echo "Add deployment steps if needed"
             }
         }
     }
